@@ -74,12 +74,17 @@ class WorldLogger:
         """
         msgs = []
         for act in acts:
+            # padding examples in the episode[0]
+            if act.is_padding():
+                break
             if not self.keep_all:
                 msg = {f: act[f] for f in self.keep_fields if f in act}
             else:
                 msg = act
             msgs.append(msg)
 
+        if len(msgs) == 0:
+            return
         self._current_episodes.setdefault(idx, [])
         self._current_episodes[idx].append(msgs)
 
