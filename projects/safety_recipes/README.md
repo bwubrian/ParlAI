@@ -87,7 +87,7 @@ parlai em -t bot_adversarial_dialogue:HumanSafetyEvaluation --flatten-dialogue F
 ```
 2) To automatically format the generated logs from ParlAI format `world_logs.jsonl` to human safety evaluation ready format as in [here](https://github.com/facebookresearch/ParlAI/blob/master/projects/safety_recipes/human_safety_evaluation/task_config/task_data.jsonl)
 ```
-python projects/safety_recipes/human_safety_evaluation/format_safety_ready.py --world-logs-path tmp/world_logs.jsonl --eval-logs-dir task_config/
+python projects/safety_recipes/human_safety_evaluation/format_safety_ready.py --world-logs-path tmp/world_logs.jsonl --eval-logs-dir projects/safety_recipes/human_safety_evaluation/task_config/
 ```
 Runing the format script above will also automatically generate the `annotation_indices.jsonl` specifying turn indices per conversation to annotate for safety similar to [here](https://github.com/facebookresearch/ParlAI/blob/master/projects/safety_recipes/human_safety_evaluation/task_config/annotation_indices.jsonl). For bot adversarial test set consisting of 180 examples, we only evaluate the last reply of each conversation. 
 

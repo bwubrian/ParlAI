@@ -34,10 +34,7 @@ if __name__ == "__main__":
     with PathManager.open(world_logs_path) as data_file:
         for l in data_file.readlines():
             episode = json.loads(l.strip())
-            # TODO: when conversation format is finished please remove this line;
             # TODO: 'human_eval_turn_range' unnecessary for WTC
-            if 'human_eval_turn_range' not in episode['dialog'][0][0]:
-                continue
             new_episode = []
             for turn in episode['dialog']:
                 new_episode.append(
