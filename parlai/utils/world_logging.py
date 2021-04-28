@@ -16,6 +16,7 @@ from parlai.utils.misc import msg_to_str
 from parlai.utils.conversations import Conversations
 from parlai.utils.io import PathManager
 import parlai.utils.logging as logging
+from parlai.core.message import Message
 
 import copy
 from tqdm import tqdm
@@ -75,7 +76,7 @@ class WorldLogger:
         msgs = []
         for act in acts:
             # padding examples in the episode[0]
-            if act.is_padding():
+            if isinstance(act, Message) and act.is_padding():
                 break
             if not self.keep_all:
                 msg = {f: act[f] for f in self.keep_fields if f in act}
