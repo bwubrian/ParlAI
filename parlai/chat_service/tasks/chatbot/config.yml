@@ -15,6 +15,11 @@ opt:
       model: transformer/generator
       model_file: zoo:blender/blender_90M/model
       interactive_mode: True
-      no_cuda: True
+      no_cuda: False
+    blender_400Mdistill:
+      model: transformer/generator
+      model_file: zoo:blender/blender_400Mdistill/model
+      interactive_mode: True
+      no_cuda: False
 additional_args:
   page_id: 1 # Configure Your Own Page
